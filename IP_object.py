@@ -1,5 +1,14 @@
 import scapy.all as scapy
+##Basic operation on packet
+a=scapy.IP(ttl=10)
+print(f"TTL value :{a.ttl}\nSender ip:{a.src} ")
+a.dst="123.45.67.88"
+print("IP packet a :")
+a.show()
+del(a.ttl)
+print("IP packet After delete TTL :",a.ttl)
 
+##Create packet
 ip=scapy.IP()                                   ##When you call IP(), you’re initializing a new IP packet with default values, which can be customized by setting various fields.
 print("New IP packet with default values",ip)
 ip=scapy.IP(dst="66.66.66.66")                  ##creates an IP packet with the destination address set to 66.66.66.66
